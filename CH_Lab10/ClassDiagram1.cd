@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CH_Lab10.Exam">
+    <Position X="5.5" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAEAAAAQAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Exam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CH_Lab10.ExamOut">
+    <Position X="5.5" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAABBA=</HashCode>
+      <FileName>ExamOut.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CH_Lab10.Program">
+    <Position X="8.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARACAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CH_Lab10.Test">
+    <Position X="5.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAACAAAAEACAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Test.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CH_Lab10.Trial">
+    <Position X="5.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAQAAAACAAAQEhAAEAAAAAAAEBAAAABAAAAAAABA=</HashCode>
+      <FileName>Trial.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
