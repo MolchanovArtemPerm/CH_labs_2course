@@ -98,10 +98,7 @@ namespace CH_Lab9
             temp.Add(hoursTemp, minutesTemp); // Добавление 2 времени
             temp.Print();
 
-            t.Subtraction(ref temp); // Вычитание времени из времени
-
-            Console.Write("\nВремя после вычитания: ");
-            t.Print(); // Вывод
+            t.Subtraction(temp); // Вычитание времени из времени
 
             Console.WriteLine($"\nСчетчик создания времени: {t.GetCount()}");// Счетчик создания времен
 
@@ -116,14 +113,14 @@ namespace CH_Lab9
             t.Print();
 
             // Сравнение большего к меньшему
-            Console.WriteLine($"\nВремя {t.GetHours()}:{t.GetMinutes()} больше чем время {temp.GetHours()}:{temp.GetMinutes()}: {t > temp}");
+            Console.WriteLine($"\nВремя {t.Hours}:{t.Minutes} больше чем время {temp.Hours}:{temp.Minutes}: {t > temp}");
 
             // Сравнение меньшего к большему
-            Console.WriteLine($"\nВремя {t.GetHours()}:{t.GetMinutes()} меньше чем время {temp.GetHours()}:{temp.GetMinutes()}: {t < temp}");
+            Console.WriteLine($"\nВремя {t.Hours}:{t.Minutes} меньше чем время {temp.Hours}:{temp.Minutes}: {t < temp}");
 
             // Неявное преобразование, всего минут
             int allMin = t;
-            Console.WriteLine($"\nВремя {t.GetHours()}:{t.GetMinutes()} в минутах: {allMin}\n");
+            Console.WriteLine($"\nВремя {t.Hours}:{t.Minutes} в минутах: {allMin}\n");
 
             // Явное преобразование, проверка на 0
             bool f = (bool)t;
@@ -142,11 +139,12 @@ namespace CH_Lab9
             do
             {
                 Console.Write("\nВведите размер массива: ");
+                tempStr = "";
                 tempStr = Console.ReadLine();
                 isFlag = int.TryParse(tempStr, out sizeArr);
                 if (sizeArr < 0 || !isFlag)
                 {
-                    Console.WriteLine("размер не может быть отрицательным!");
+                    Console.WriteLine("Размер не может быть отрицательным!");
                 }
                 else
                 {

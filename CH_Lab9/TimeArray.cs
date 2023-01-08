@@ -99,7 +99,7 @@ namespace CH_Lab9
             }
             set
             {
-                if (index < 0 || index>= arr.Length)
+                if (index < 0 || index >= arr.Length)
                 {
                     Console.WriteLine("Такого индекса нет!");
                 }

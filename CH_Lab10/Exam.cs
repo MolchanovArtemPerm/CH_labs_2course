@@ -43,5 +43,4 @@ namespace CH_Lab10
             this.count_tickets = rnd.Next(2, 6);
         }
     }
-
 }

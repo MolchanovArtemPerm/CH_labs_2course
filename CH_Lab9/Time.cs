@@ -23,17 +23,17 @@ namespace CH_Lab9
         }
         public Time(int h, int m)
         {
-            hours = h;
             if (h < 0 & m < 0)
             {
                 Console.WriteLine("Часы/Минуты не могут быть отрицательными");
             }
             else
             {
+                hours = h; minutes = m;
                 while (m >= 60)
                 {
                     hours++;
-                    m -= 60;
+                    minutes -= 60;
                 }
             }
         }
@@ -60,14 +60,6 @@ namespace CH_Lab9
         public void Clear()
         {
             hours = 0; minutes = 0; count = 0;
-        }
-        public int GetHours()
-        {
-            return hours;
-        }
-        public int GetMinutes()
-        {
-            return minutes;
         }
         public int GetCount()
         {
@@ -106,9 +98,9 @@ namespace CH_Lab9
                 }
             }
         }
-        public void Subtraction(ref Time t)
+        public void Subtraction(Time t)
         {
-            if (hours < t.hours & minutes < t.minutes)
+            if (hours <= t.hours && minutes < t.minutes)
             {
                 Console.WriteLine("\nОперация невозможна!\nВы пытаетесь вычести из меньшего времени большее.");
             }
@@ -123,6 +115,8 @@ namespace CH_Lab9
                 minutes %= 60;
                 t.hours = t.minutes / 60;
                 t.minutes %= 60;
+                Console.Write("\nВремя после вычитания: ");
+                Print();
             }
         }
         public void Print()
