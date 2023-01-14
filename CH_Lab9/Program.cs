@@ -17,90 +17,30 @@ namespace CH_Lab9
             Time t = new Time();
             Time temp = new Time();
             int hoursTemp = 0; int minutesTemp = 0; int sizeArr = 0;
-            bool isConvert = false;
-            bool isFlag = false;
-            string tempStr;
-
 
             //Создание 1 времени
             Console.WriteLine("\nСоздание первого времени");
-            do
-            {
-                Console.Write("\nВведите значение часов: ");
-                tempStr = Console.ReadLine();
-                isFlag = int.TryParse(tempStr, out hoursTemp);
-                if (hoursTemp < 0 || !isFlag)
-                {
-                    Console.WriteLine("Ошибка, нужно ввести целое число!");
-                }
-                else
-                {
-                    isConvert = true;
-                }
-            } while (!isConvert);
-            isConvert = false;
-            do
-            {
-                Console.Write("Введите значения минут: ");
-                tempStr = Console.ReadLine();
-                isFlag = int.TryParse(tempStr, out minutesTemp);
-                if (minutesTemp < 0 || !isFlag)
-                {
-                    Console.WriteLine("Ошибка, нужно ввести целое число!");
-                }
-                else
-                {
-                    isConvert = true;
-                }
-            } while (!isConvert);
-            isConvert = false;
+            hoursTemp = Program.GetInt("\nВведите значение часов: ", "Ошибка, нужно ввести целое число!", (int num) => num >= 0);
+            minutesTemp = Program.GetInt("\nВведите значение минут: ", "Ошибка, нужно ввести целое число!", (int num) => num >= 0);
+
             // Добавление методом
             t.Add(hoursTemp, minutesTemp);
             Console.WriteLine("");
-            // Вывод времени
-            t.Print();
+            t.Print(); // Вывод времени
 
             // Создание второго времени
             Console.WriteLine("\nСоздание второго времени");
-            do
-            {
-
-                Console.Write("\nВведите значение часов: ");
-                tempStr = Console.ReadLine();
-                isFlag = int.TryParse(tempStr, out hoursTemp);
-                if (hoursTemp < 0 || !isFlag)
-                {
-                    Console.WriteLine("Ошибка, нужно ввести целое число!");
-                }
-                else
-                {
-                    isConvert = true;
-                }
-            } while (!isConvert);
-            isConvert = false;
-            do
-            {
-                Console.Write("Введите значения минут: ");
-                tempStr = Console.ReadLine();
-                isFlag = int.TryParse(tempStr, out minutesTemp);
-                if (minutesTemp < 0 || !isFlag)
-                {
-                    Console.WriteLine("Ошибка, нужно ввести целое число!");
-                }
-                else
-                {
-                    isConvert = true;
-                }
-            } while (!isConvert);
-            isConvert = false;
+            hoursTemp = Program.GetInt("\nВведите значение часов: ", "Ошибка, нужно ввести целое число!", (int num) => num >= 0);
+            minutesTemp = Program.GetInt("\nВведите значение минут: ", "Ошибка, нужно ввести целое число!", (int num) => num >= 0);
 
             Console.WriteLine("");
             temp.Add(hoursTemp, minutesTemp); // Добавление 2 времени
-            temp.Print();
+            temp.Print(); // Вывод 2 времени
 
+            Console.Write("\nВычитание 1 времени из 2: ");
             t.Subtraction(temp); // Вычитание времени из времени
 
-            Console.WriteLine($"\nСчетчик создания времени: {t.GetCount()}");// Счетчик создания времен
+            Console.WriteLine($"\nСчетчик создания времени: {t.GetCount()}"); // Счетчик создания времен
 
             // Унарное прибавление
             t++;
@@ -126,67 +66,27 @@ namespace CH_Lab9
             bool f = (bool)t;
             if (f)
             {
-                Console.WriteLine("Время больше 0");
+                Console.WriteLine("Время больше 0: Правда");
             }
             else
             {
-                Console.WriteLine("Время равно 0");
+                Console.WriteLine("Время равно 0: Ложь");
             }
 
             // Создание массива времени
             Console.WriteLine("\nСоздание массива времени");
-            isConvert = false;
-            do
-            {
-                Console.Write("\nВведите размер массива: ");
-                tempStr = "";
-                tempStr = Console.ReadLine();
-                isFlag = int.TryParse(tempStr, out sizeArr);
-                if (sizeArr < 0 || !isFlag)
-                {
-                    Console.WriteLine("Размер не может быть отрицательным!");
-                }
-                else
-                {
-                    isConvert = true;
-                }
-            } while (!isConvert);
+            sizeArr = Program.GetInt("\nВведите размер массива: ", "Размер не может быть отрицательным!", (int num) => num >= 0);
+
             TimeArray arr = new TimeArray(sizeArr);
             Time[] list = new Time[sizeArr];
-            isConvert = false;
+
             for (int i = 0,k = 1; i < sizeArr; i++,k++)
             {
                 Time newtime = new Time();
                 newtime.Clear();
-                do
-                {
-                    Console.Write($"\nВведите значение часов для {k} времени: ");
-                    tempStr = Console.ReadLine();
-                    isFlag = int.TryParse(tempStr, out hoursTemp);
-                    if (hoursTemp < 0 || !isFlag)
-                    {
-                        Console.WriteLine("Время не может быть отрицательным!");
-                    }
-                    else
-                    {
-                        isConvert = true;
-                    }
-                } while (!isConvert);
-                isConvert = false;
-                do
-                {
-                    Console.Write($"Введите значения минут для {k} времени: ");
-                    tempStr = Console.ReadLine();
-                    isFlag = int.TryParse(tempStr, out minutesTemp);
-                    if (minutesTemp < 0 || !isFlag)
-                    {
-                        Console.WriteLine("Время не может быть отрицательным!");
-                    }
-                    else
-                    {
-                        isConvert = true;
-                    }
-                } while (!isConvert);
+                hoursTemp = Program.GetInt($"\nВведите значение часов для {k} времени: ", "Ошибка, нужно ввести целое число!", (int num) => num >= 0);
+                minutesTemp = Program.GetInt($"\nВведите значения минут для {k} времени: ", "Ошибка, нужно ввести целое число!", (int num) => num >= 0);
+
                 newtime.Add(hoursTemp,minutesTemp);
                 if (list[i] == null)
                 {
@@ -204,6 +104,21 @@ namespace CH_Lab9
             Maximus = arr.Maximum();
             Maximus.Print(); // Вывод максимального значения
             Console.Write($"Под номером: {arr.Get_id()}");
+        }
+        public static int GetInt(string inputMessage, string errorMessage, Predicate<int> condition)
+        {
+            int result;
+            bool isCorrect;
+            do
+            {
+                Console.Write(inputMessage);
+                isCorrect = int.TryParse(Console.ReadLine(), out result) && condition(result);
+                if (!isCorrect)
+                {
+                    Console.Write(errorMessage);
+                }
+            } while (!isCorrect);
+            return result;
         }
     }
 }

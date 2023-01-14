@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CH_Lab10
 {
-    public class Trial : IRandomInit, IComparable<Trial>
+    public class Trial : IRandomInit, IComparable<Trial>, ICloneable
     {
         protected static readonly string[] surname = { "Молчанов", "Мазунин", "Возисов", "Иванов", "Кузнецов", "Глазырин", "Власов", "Омутных", "Воронин", "Валишин", "Хаирназов", "Кудайбергенов", "Абдимиталипов" };
         protected static readonly string[] name = { "Артем", "Иван", "Егор", "Дима", "Максим", "Павел", "Сережа", "Олег", "Тимур", "Даниил", "Данил", "Даирбек", "Мирислам","Ренат"};
@@ -59,6 +59,10 @@ namespace CH_Lab10
         {
             return (obj is Trial && ((Trial)obj).subject_surname == this.subject_surname &&
                 ((Trial)obj).subject_name == this.subject_name && ((Trial)obj).result == this.result);
+        }
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
         }
     }
 }

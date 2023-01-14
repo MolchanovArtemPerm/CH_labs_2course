@@ -28,8 +28,6 @@ namespace CH_Lab10
             } while (!isCorrect);
             return result;
         }
-
-        //цветной вывод текста в консоль
         public static void ColorDisplay(string message, ConsoleColor color)
         {
             Console.ForegroundColor = color;

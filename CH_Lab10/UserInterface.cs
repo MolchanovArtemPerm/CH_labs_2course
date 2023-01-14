@@ -24,8 +24,8 @@ namespace CH_Lab10
             while (true)
             {
                 Console.Clear();
-                Program.ColorDisplay("Номера команд:\n1. 1 часть\n2. 2 часть\n3. 3 часть\n0. Назад\n", ConsoleColor.Green);
-                int command = Program.GetInt("Введите номер команды: ", "Несуществующая команда, повторите ввод =>\n", (int num) => num >= 0 && num <= 3);
+                Program.ColorDisplay("Номера команд:\n1. 1 часть\n2. 2 часть\n3. 3 часть\n0. Назад\n", ConsoleColor.Blue);
+                int command = Program.GetInt("Введите номер команды: ", "Несуществующая команда, повторите ввод\n", (int num) => num >= 0 && num <= 3);
                 Console.Clear();
                 switch (command)
                 {
@@ -49,8 +49,8 @@ namespace CH_Lab10
             {
                 Program.ColorDisplay("Номера команд:\n1. Вывод массива с помощью переопределния виртуальной функции ToString()\n" +
                    "2. Вывод массива без виртуальных функций\n" +
-                   "0. Назад\n", ConsoleColor.Green);
-                int command = Program.GetInt("Введите номер команды: ", "Несуществующая команда, повторите ввод =>\n", (int num) => num >= 0 && num <= 2);
+                   "0. Назад\n", ConsoleColor.Blue);
+                int command = Program.GetInt("Введите номер команды: ", "Несуществующая команда, повторите ввод\n", (int num) => num >= 0 && num <= 2);
                 switch (command)
                 {
                     case 1:
@@ -70,7 +70,7 @@ namespace CH_Lab10
                     case 0:
                         return;
                 }
-                Program.ColorDisplay("Для продолжения нажмите любую клавишу...", ConsoleColor.Yellow);
+                Program.ColorDisplay("Для продолжения нажмите любую клавишу...", ConsoleColor.Green);
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -81,9 +81,9 @@ namespace CH_Lab10
             {
                 Program.ColorDisplay("Номера команд:\n1. Ученики, сдавшие все экзамены на отлично.\n" +
                     "2. Ученики, не сдавшие хотя бы один экзамен.\n" +
-                    "3. Ученики, сдавшие заданный экзамены на хорошо и отлично.\n0. Назад\n", ConsoleColor.Green);
+                    "3. Ученики, сдавшие заданный экзамены на хорошо и отлично.\n0. Назад\n", ConsoleColor.Blue);
                 Console.Write(c);
-                int command = Program.GetInt("Введите номер команды: ", "Несуществующая команда, повторите ввод =>\n", (int num) => num >= 0 && num <= 3);
+                int command = Program.GetInt("Введите номер команды: ", "Несуществующая команда, повторите ввод\n", (int num) => num >= 0 && num <= 3);
                 switch (command)
                 {
                     case 1:
@@ -100,7 +100,7 @@ namespace CH_Lab10
                     case 0:
                         return;
                 }
-                Program.ColorDisplay("Для продолжения нажмите любую клавишу...", ConsoleColor.Yellow);
+                Program.ColorDisplay("Для продолжения нажмите любую клавишу...", ConsoleColor.Green);
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -113,8 +113,8 @@ namespace CH_Lab10
                     "2. Сортировка массива по ФИО с помощью интерфейса IComparable\n" +
                     "3. Сортировка массива по имени с помощью интерфейса ICompare и поиск человека с помощью перегрузки метода Equals\n" +
                     "4. Разница между поверхностным и глубоким копированием\n" +
-                    "0. Назад\n", ConsoleColor.Green);
-                int command = Program.GetInt("Введите номер команды: ", "Несуществующая команда, повторите ввод =>\n", (int num) => num >= 0 && num <= 4); 
+                    "0. Назад\n", ConsoleColor.Blue);
+                int command = Program.GetInt("Введите номер команды: ", "Несуществующая команда, повторите ввод\n", (int num) => num >= 0 && num <= 4); 
                 switch (command)
                 {
                     case 1:
@@ -123,7 +123,7 @@ namespace CH_Lab10
                             Console.WriteLine(i.ToString() + ". " + randoms[i].ToString());
                         }
                         break;
-                        break;
+
                     case 2:
                         Console.Write(c);
                         break;
@@ -140,20 +140,20 @@ namespace CH_Lab10
                         Array.Sort(c.trials);
                         break;
                     case 4:
-                        Program.ColorDisplay("Изначальный объект, переменная `c` типа School:\n", ConsoleColor.Yellow);
+                        Program.ColorDisplay("Изначальный объект, переменная `c` типа School:\n", ConsoleColor.Green);
                         Console.Write(c);
-                        Program.ColorDisplay("Поверхностная копия, переменная `shallow_c` типа School:\n", ConsoleColor.Yellow);
+                        Program.ColorDisplay("Поверхностная копия, переменная `shallow_c` типа School:\n", ConsoleColor.Green);
                         Console.Write(shallow_c);
-                        Program.ColorDisplay("Глубокая копия, переменная `deep_c` типа School:\n", ConsoleColor.Yellow);
+                        Program.ColorDisplay("Глубокая копия, переменная `deep_c` типа School:\n", ConsoleColor.Green);
                         Console.Write(deep_c);
                         for (int i = 0; i < c.trials.Length; ++i)
                             c.trials[i] = null;
-                        Program.ColorDisplay("Все элементы массива в переменной `c` заменены на null =>\n", ConsoleColor.Magenta);
-                        Program.ColorDisplay("Изначальный объект, переменная `c` типа School:\n", ConsoleColor.Yellow);
+                        Program.ColorDisplay("Все элементы массива в переменной `c` заменены на null\n", ConsoleColor.Magenta);
+                        Program.ColorDisplay("Изначальный объект, переменная `c` типа School:\n", ConsoleColor.Green);
                         Console.Write(c);
-                        Program.ColorDisplay("Поверхностная копия, переменная `shallow_c` типа School:\n", ConsoleColor.Yellow);
+                        Program.ColorDisplay("Поверхностная копия, переменная `shallow_c` типа School:\n", ConsoleColor.Green);
                         Console.Write(shallow_c);
-                        Program.ColorDisplay("Глубокая копия, переменная `deep_c` типа School:\n", ConsoleColor.Yellow);
+                        Program.ColorDisplay("Глубокая копия, переменная `deep_c` типа School:\n", ConsoleColor.Green);
                         Console.Write(deep_c);
                         c = (School)deep_c.Clone();
                         randoms[randoms.Length - 1] = c;
@@ -162,7 +162,7 @@ namespace CH_Lab10
                     case 0:
                         return;
                 }
-                Program.ColorDisplay("Для продолжения нажмите любую клавишу...", ConsoleColor.Yellow);
+                Program.ColorDisplay("Для продолжения нажмите любую клавишу...", ConsoleColor.Green);
                 Console.ReadKey();
                 Console.Clear();
             }

@@ -100,7 +100,7 @@ namespace CH_Lab9
         }
         public void Subtraction(Time t)
         {
-            if (hours <= t.hours && minutes < t.minutes)
+            if (hours <= t.hours && ((minutes < t.minutes) || (minutes == t.minutes)))
             {
                 Console.WriteLine("\nОперация невозможна!\nВы пытаетесь вычести из меньшего времени большее.");
             }

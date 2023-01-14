@@ -19,11 +19,18 @@ namespace CH_Lab11
         {
             this.name_test = name_test;
         }
+        public Trial BaseTrial
+        {
+            get
+            {
+                return new Trial(this.subject_surname, this.subject_name, this.result);
+            }
+        }
         public override string ToString()
         {
             return $"Ученик: {subject_surname} {subject_name}" +
                 $", Отметка: {result}" +
-                $", Экзамен по: {name_test}";
+                $", Экзамен: {name_test}";
         }
         public override object Clone()
         {

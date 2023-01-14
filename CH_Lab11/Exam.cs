@@ -22,7 +22,7 @@ namespace CH_Lab11
         {
             return $"Ученик: {subject_surname} {subject_name}" +
                 $", Отметка: {result}" +
-                $", Экзамен по: {name_test}" +
+                $", Экзамен: {name_test}" +
                 $", Количество билетов: {count_tickets}";
         }
         public override object Clone()

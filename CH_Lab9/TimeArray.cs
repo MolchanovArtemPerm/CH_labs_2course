@@ -60,7 +60,7 @@ namespace CH_Lab9
             arr = new Time[lenght_arr];
             for (int i = 0; i < lenght_arr; i++)
             {
-                arr[i]=new Time(rnd.Next(0,100),rnd.Next(0,100));
+                arr[i]=new Time();
             }
     
         }
@@ -75,8 +75,10 @@ namespace CH_Lab9
         }
         public void Print()
         {
-            for (int i = 0, k = 1; i < lenght_arr; i++,k++)
-                Console.WriteLine($"Время под номером {k}: {arr[i].Hours}:{arr[i].Minutes}");
+            for (int i = 0, k = 1; i < lenght_arr; i++, k++) 
+            { 
+                Console.WriteLine($"Время под номером {k}: {arr[i].Hours}:{arr[i].Minutes}"); 
+            }
         }
         public TimeArray()
         {

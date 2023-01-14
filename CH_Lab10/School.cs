@@ -104,7 +104,9 @@ namespace CH_Lab10
             List<Trial> l_p = new List<Trial>();
             for (int i = 0; i < trials.Length; ++i)
             {
-                if (trials[i] is Exam && ((Exam)trials[i]).name_test == exams && ((Trial)trials[i]).result >= 4)
+                if (trials[i] is Exam 
+                    && ((Exam)trials[i]).name_test == exams 
+                    && (((Trial)trials[i]).result == 4 || ((Trial)trials[i]).result == 5))
                 {
                     l_p.Add(trials[i]);
                 }
@@ -119,7 +121,7 @@ namespace CH_Lab10
         {
             if (trials.Count != 0)
             {
-                Program.ColorDisplay("Результаты запроса:\n", ConsoleColor.Yellow);
+                Program.ColorDisplay("Результаты запроса:\n", ConsoleColor.Green);
                 foreach (Trial t in trials)
                 {
                     Console.WriteLine('\t' + t.ToString());
