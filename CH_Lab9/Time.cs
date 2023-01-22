@@ -100,11 +100,9 @@ namespace CH_Lab9
         }
         public void Subtraction(Time t)
         {
-            if (hours <= t.hours && ((minutes < t.minutes) || (minutes == t.minutes)))
-            {
-                Console.WriteLine("\nОперация невозможна!\nВы пытаетесь вычести из меньшего времени большее.");
-            }
-            else
+            int allmin = (hours * 60) + minutes;
+            int allmin2 = (t.hours * 60) + t.minutes;
+            if (allmin > allmin2)
             {
                 t.minutes += t.hours * 60;
                 t.hours = 0;
@@ -117,6 +115,10 @@ namespace CH_Lab9
                 t.minutes %= 60;
                 Console.Write("\nВремя после вычитания: ");
                 Print();
+            }
+            else
+            {
+                Console.WriteLine("\nОперация невозможна!\nВы пытаетесь вычести из меньшего времени большее.");
             }
         }
         public void Print()

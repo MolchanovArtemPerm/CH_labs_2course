@@ -66,11 +66,11 @@ namespace CH_Lab9
             bool f = (bool)t;
             if (f)
             {
-                Console.WriteLine("Время больше 0: Правда");
+                Console.WriteLine("Время больше 0");
             }
             else
             {
-                Console.WriteLine("Время равно 0: Ложь");
+                Console.WriteLine("Время равно 0");
             }
 
             // Создание массива времени

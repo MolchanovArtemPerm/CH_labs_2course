@@ -11,7 +11,7 @@ namespace CH_Lab11
     internal class TestCollections
     {
         public const int MIN_LENGTH = 3;  //включительно
-        public const int MAX_LENGTH = 10;  //не включительно
+        public const int MAX_LENGTH = 500;  //не включительно
         public LinkedList<Trial> TrialLinked { get; set; }
         public LinkedList<string> StringLinked { get; set; }
         public Dictionary<Trial, Test> TrialDict { get; set; }
@@ -24,6 +24,8 @@ namespace CH_Lab11
             StringDict = new Dictionary<string, Test>();
             for (int i = 0; i < len; ++i)
             {
+                try
+                {
                     Test tests = new Test();
                     TrialDict.Add(tests.BaseTrial, tests);
                 }

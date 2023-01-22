@@ -8,12 +8,13 @@ namespace CH_Lab11
 {
     public class Trial : IRandomInit, IComparable<Trial>, ICloneable
     {
-        protected static readonly string[] surname = { "Молчанов", "Мазунин", "Возисов", "Иванов", "Кузнецов", "Глазырин", "Власов", "Омутных", "Воронин", "Валишин", "Хаирназов", "Кудайбергенов", "Абдимиталипов" };
-        protected static readonly string[] name = { "Артем", "Иван", "Егор", "Дима", "Максим", "Павел", "Сергей", "Олег", "Тимур", "Даниил", "Данил", "Даирбек", "Мирислам", "Ренат"};
+        protected static readonly string[] surname = { "Молчанов", "Пригожин", "Плотников","Лэмпард", "Мазунин", "Возисов", "Иванов", "Кузнецов", "Глазырин", "Власов", "Омутных", "Воронин", "Валишин", "Хаирназов", "Кудайбергенов", "Абдимиталипов" };
+        protected static readonly string[] name = { "Артем", "Иван", "Егор", "Дима", "Максим", "Павел","Илья","Семен","Адам","Андрей", "Сергей", "Олег", "Тимур", "Даниил", "Данил", "Даирбек", "Мирислам", "Ренат"};
         protected static readonly int[] marks = { 5, 4, 3, 2 };
         public string subject_name { get; protected set; }
         public string subject_surname { get; protected set; }
         public float result { get; protected set; }
+        
 
         public Trial()
         {
@@ -75,7 +76,7 @@ namespace CH_Lab11
 
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            return this.ToString().GetHashCode();
         }
     }
 }
